@@ -3,11 +3,6 @@ from datetime import datetime, timedelta
 
 
 def get_trending_repositories(top_size):
-    """С помощью github api производит поиск всех репозиториев, созданных
-     за последнюю неделю. Упорядочивает их по убыванию количества звёзд(stars).
-     Возвращает список, элементами которого являются словари с информацией о
-     репозитории."""
-
     github_url = "https://api.github.com/search/repositories"
     user_datetime = datetime.now()
     days_in_week = 7
