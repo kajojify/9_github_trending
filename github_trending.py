@@ -15,7 +15,6 @@ def get_trending_repositories(top_size):
     github_datetime_string = github_datetime.strftime("%Y-%m-%dT%H:%M:%S")
     payload = {'q': 'created:>='+github_datetime_string,
                'sort': 'stars', 'order': 'desc', 'per_page': top_size}
-    # payload['q'] - запрос к github api
     github_response = requests.get(github_url, params=payload)
     github_data = github_response.json()['items']
     trending_repositories = list()
