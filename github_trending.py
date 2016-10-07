@@ -10,8 +10,8 @@ def get_trending_repositories(top_size):
 
     github_url = "https://api.github.com/search/repositories"
     user_datetime = datetime.now()
-    github_datetime = user_datetime - timedelta(days=7)
-    # github_datetime - время, которое было неделю назад
+    days_in_week = 7
+    github_datetime = user_datetime - timedelta(days=days_in_week)
     github_datetime_string = github_datetime.strftime("%Y-%m-%dT%H:%M:%S")
     payload = {'q': 'created:>='+github_datetime_string,
                'sort': 'stars', 'order': 'desc', 'per_page': top_size}
@@ -29,7 +29,8 @@ def get_trending_repositories(top_size):
 
 
 if __name__ == '__main__':
-    trending_repositories = get_trending_repositories(20)
+    repositories_amount = 20
+    trending_repositories = get_trending_repositories(repositories_amount)
     print("Список репозиториев, созданных за последнюю неделю "
           "и упорядоченных по убыванию количества звёзд(stars):")
     print("{:<10}{:<20}{:<35}{:^50}{:<20}\n".format("№", "Имя владельца",
@@ -41,3 +42,4 @@ if __name__ == '__main__':
                                                      repo['repo_name'],
                                                      repo['url'],
                                                      repo['issues_number']))
+
