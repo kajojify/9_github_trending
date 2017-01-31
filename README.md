@@ -1,5 +1,16 @@
-# 9_github_trending
+9_github_trending
+===================
+The script displays 20 repositories (name of owner, name of repo, url, number of issues), which were created last week. These repos are arranged in descending order of starts' number.
 
-Скрипт github_trending.py выводит в консоль 20 репозиториев (имя владельца, название, ссылка), которые были созданы в последнюю неделю. Репозитории упорядочены в порядке убывания количества звёзд(stars). Для каждого репозитория приведено количество открытых issues.
-
-Запуск скрипта производится следующим образом: 1) Открыть терминал. 2) Перейти в папку, содержащую скрипт github_trending.py и текстовый файл requirements.txt. 3) Выполнить команду pip install -r requirements.txt для установки необходимых пакетов python. При выполнении команды могут понадобиться права root. 4) Выполнить команду python github_trending.py. Если при выполнении программы произошла ошибка - попробуйте выполнить команду python3 github_trending.py. <strong>Обязательно развернуть окно терминала на весь экран!</strong>
+How to run
+----------
+Clone this repository. Then go to the repository directory.
+Install all requirements:
+```
+pip3 install -r requirements.txt
+```
+Run the script:
+```
+python3 github_trending.py
+```
+You have to open terminal in full screen for a better view. 
